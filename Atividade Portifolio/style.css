@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: rgb(187, 161, 211);
+    color: #222;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Estilização do Header */
+.header-portfolio {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+
+
+.contato-info {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+
+/* Estilização do Main e Cards de Seções */
+.main-portfolio {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.secao-card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.secao-card:hover {
+    transform: translateY(-2px);
+}
+
+.secao-card h2 {
+    color: #444;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #d0c2e8;
+    padding-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Estilização específica para os itens de cursos */
+.lista-cursos {
+    list-style-type: square;
+}
+
+.item-curso {
+    color: #2c2c2c;
+    margin-bottom: 6px;
+}
+
+/* Links estilizados */
+a {
+    color: #5b21b6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}

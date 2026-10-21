@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #bd3030, #801a1a);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        header p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .nav-header {
+            margin-top: 20px;
+        }
+
+        .ul-header-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        .ul-header-list a {
+            color: #fff;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .ul-header-list a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            flex: 1;
+            width: 100%;
+        }
+
+        article {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
+            text-align: center;
+        }
+
+        #lista {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
+            text-align: center;
+        }
+
+        #lista h3 {
+            margin-bottom: 15px;
+            color: #bd3030;
+        }
+
+        #lista ol {
+            display: inline-block;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #lista li {
+            margin: 8px 0;
+        }
+
+        #multimidia {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .midia-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            max-height: 250px;
+            object-fit: cover;
+        }
+
+        video {
+            max-width: 100%;
+            border-radius: 6px;
+        }
+
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body> 
+    <header> 
+        <h1>Curso de Full Stack</h1> 
+        <h2>Resumo do Curso</h2> 
+        <p>O curso de Full Stack aborda conceitos fundamentais de HTML, CSS e JavaScript, além de introduzir os alunos aos principais frameworks da atualidade, como React. Tais conceitos são essenciais para o desenvolvimento de aplicações web modernas. Introduz noções do Git e GitHub, ferramentas cruciais para o controle de versão e colaboração em projetos de software. O curso também enfatiza a importância do trabalho em equipe, preparando os alunos para ambientes de desenvolvimento colaborativos.</p> 
+        <nav class="nav-header"> 
+            Links úteis: 
+            <ul class="ul-header-list"> 
+                <li><a href="https://aws.amazon.com/pt/what-is/full-stack-development/" target="_blank">Definição</a></li> 
+                <li><a href="https://github.com/AlmirNeto87" target="_blank">Meu GitHub</a></li> 
+            </ul> 
+        </nav> 
+    </header> 
+
+    <main> 
+        <article> 
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eius non praesentium explicabo autem nostrum fugiat corporis! Ullam atque blanditiis eligendi ipsam, assumenda reprehenderit error necessitatibus provident. Obcaecati, nobis est!</p> 
+        </article> 
+
+        <section id="lista"> 
+            <h3>Conteúdos do Curso</h3> 
+            <ol> 
+                <li>Introdução ao HTML</li> 
+                <li>HTML/CSS</li> 
+                <li>JavaScript</li> 
+                <li>React</li> 
+            </ol> 
+        </section> 
+
+        <section id="multimidia"> 
+            <h3>Mídia do Curso</h3>
+            <p>Imagem:</p>
+            <img class="midia-img" src="https://picsum.photos/600/300" alt="Imagem Ilustrativa">
+            <p>Audio:</p>
+            <audio controls> 
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"> 
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+            <p>Video:</p> 
+            <video controls width="400"> 
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"> 
+                Seu navegador não suporta o elemento de vídeo. 
+            </video> 
+        </section> 
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Curso de Full Stack Online GT 4.0 . Todos os direitos reservados.</p>
+        <p>Desenvolvido por Antonio Almir.</p>
+    </footer>
+</body>
+</html>
