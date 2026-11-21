@@ -1,94 +1,75 @@
 
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-
-const HeaderContainer = styled.header`
-    background-color: #4f6c91;
-    color: white;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-`;
-
-const Title = styled.h1`
-    font-size: 24px;
-    margin: 0;
-`;
-
-const Nav = styled.nav`
-    display: flex;
-    align-items: center;
-`;
-
-const NavList = styled.ul`
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-`;
-
-const StyledLink = styled(NavLink)`
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: 0.3s;
-
-    &:hover {
-        color: #ffd1d1;
-    }
-
-    &.active {
-        color: #ffffff;
-        font-weight: bold;
-        border-bottom: 2px solid #e07d7d;
-        padding-bottom: 5px;
-    }
-`;
 
 const Header = () => {
+
+    const links = [
+        { path: '/', label: 'Início', icon: 'pi pi-home', end: true },
+        { path: '/contatos', label: 'Contatos', icon: 'pi pi-phone' },
+        { path: '/sobre', label: 'Sobre', icon: 'pi pi-info-circle' },
+        { path: '/loja', label: 'Loja Virtual', icon: 'pi pi-shopping-bag' },
+        { path: '/feedbackform', label: 'Feedback', icon: 'pi pi-comments' }
+    ];
+
     return (
-        <HeaderContainer>
 
-            <Title>Front-End React</Title>
+        <header className="surface-card shadow-2">
 
-            <Nav>
-                <NavList>
-                    <li>
-                        <StyledLink to="/">
-                            Página Inicial
-                        </StyledLink>
-                    </li>
-                
-                    <li>
-                        <StyledLink to="/contatos">
-                            Contatos
-                        </StyledLink>
-                    </li>
+            <div className="flex flex-wrap justify-content-between align-items-center gap-3 p-3 md:px-5">
 
-                    <li>
-                        <StyledLink to="/sobre">
-                            Sobre
-                        </StyledLink>
-                    </li>
+                {/* Logo / Título */}
+                <NavLink
+                    to="/"
+                    className="flex align-items-center gap-2 no-underline"
+                >
+                    <i className="pi pi-desktop text-primary text-2xl" />
 
-                    <li>
-                        <StyledLink to="/loja">
-                            Loja Virtual
-                        </StyledLink>
-                    </li>
+                    <span className="text-xl font-bold text-900">
+                        Front-End React
+                    </span>
+                </NavLink>
 
+                {/* Navegação */}
+                <nav>
 
-                </NavList>
-            </Nav>
+                    <ul className="flex flex-wrap align-items-center gap-2 md:gap-3 list-none m-0 p-0">
 
-        </HeaderContainer>
+                        {links.map((link) => (
+
+                            <li key={link.path}>
+
+                                <NavLink
+                                    to={link.path}
+                                    end={link.end}
+                                    className={({ isActive }) =>
+                                        `flex align-items-center gap-2 no-underline border-round px-3 py-2 transition-colors transition-duration-200 ${
+                                            isActive
+                                                ? 'bg-primary text-white font-bold'
+                                                : 'text-700 hover:bg-primary-50 hover:text-primary'
+                                        }`
+                                    }
+                                >
+
+                                    <i className={link.icon} />
+
+                                    <span>{link.label}</span>
+
+                                </NavLink>
+
+                            </li>
+
+                        ))}
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </header>
+
     );
+
 };
 
 export default Header;
