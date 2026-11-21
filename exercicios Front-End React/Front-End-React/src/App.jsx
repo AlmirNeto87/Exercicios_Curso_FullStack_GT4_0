@@ -1,31 +1,58 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
-import PageLayout from './layouts/PageLayout';
-import NotFound from './pages/NotFound'; 
-import Home  from  './pages/Home';
-import FeedbackForm from './pages/FeedbackForm';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+
+import PageLayout from './layouts/PageLayout';
+
+const NotFound = lazy(() => import('./pages/NotFound'));
+const Home = lazy(() => import('./pages/Home'));
+const FeedbackForm = lazy(() => import('./pages/FeedbackForm'));
+const Contact = lazy(() => import('./pages/Contacts'));
+const About = lazy(() => import('./pages/About'));
 
 const App = () => (
+    <BrowserRouter>
 
-    
-    <>
-        <BrowserRouter>
-            
-            <Routes> 
-                {/* Rota Pública */}
-                <Route path="/" element={<PageLayout />} > 
-                    <Route index element={<Home />} />
-                    <Route path="/feedbackform" element={<FeedbackForm />} />
-                    <Route path="*" element={<NotFound />} />
-                </Route>
-      
-                    {/* Se não achar nenhuma rota ou não estiver logado, cai aqui */}
+        <Routes>
 
-            </Routes>
-            
-        </BrowserRouter> 
-    </>
+            {/* Rota Pública */}
+            <Route path="/" element={<PageLayout />}>
 
-); 
+                <Route index element={
+                    <Suspense fallback={<p>Carregando página...</p>}>
+                        <Home />
+                    </Suspense>
+                } />
+
+                <Route path="feedbackform" element={
+                    <Suspense fallback={<p>Carregando página...</p>}>
+                        <FeedbackForm />
+                    </Suspense>
+                } />
+
+                <Route path="contatos" element={
+                    <Suspense fallback={<p>Carregando página...</p>}>
+                        <Contact />
+                    </Suspense>
+                } />
+
+                <Route path="sobre" element={
+                    <Suspense fallback={<p>Carregando página...</p>}>
+                        <About />
+                    </Suspense>
+                } />
+
+                <Route path="*" element={
+                    <Suspense fallback={<p>Carregando página...</p>}>
+                        <NotFound />
+                    </Suspense>
+                } />
+
+            </Route>
+
+        </Routes>
+
+    </BrowserRouter>
+);
 
 export default App;

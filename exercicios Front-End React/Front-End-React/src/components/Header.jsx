@@ -64,10 +64,16 @@ const Header = () => {
                             Página Inicial
                         </StyledLink>
                     </li>
+                
+                    <li>
+                        <StyledLink to="/contatos">
+                            Contatos
+                        </StyledLink>
+                    </li>
 
                     <li>
-                        <StyledLink to="/feedbackform">
-                            Formulário
+                        <StyledLink to="/sobre">
+                            Sobre
                         </StyledLink>
                     </li>
                 </NavList>

@@ -1,4 +1,5 @@
 
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HomeContainer = styled.section`
@@ -47,6 +48,8 @@ const HomeButton = styled.button`
 
 const Home = () => {
 
+    const navigate = useNavigate();
+
     return (
         <HomeContainer>
 
@@ -61,7 +64,7 @@ const Home = () => {
                 no desenvolvimento web.
             </HomeDescription>
 
-            <HomeButton>
+            <HomeButton onClick={() => navigate('/feedbackform')}>
                 Começar a explorar
             </HomeButton>
 
