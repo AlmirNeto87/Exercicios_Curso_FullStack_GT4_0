@@ -74,10 +74,12 @@ const ProductList = () => {
                 {products.map((product) => (
 
                     <div
-                        key={product.id}
-                        className="col-12 sm:col-6 lg:col-4 xl:col-3"
+                    key={product.id}
+                    className="col-12 sm:col-6 lg:col-4 xl:col-3"
                     >
-                        <ProductCard product={product} />
+
+                    <ProductCard product={product} />
+
                     </div>
 
                 ))}
