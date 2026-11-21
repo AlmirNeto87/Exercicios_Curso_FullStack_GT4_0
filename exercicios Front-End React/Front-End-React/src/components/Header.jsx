@@ -55,7 +55,7 @@ const Header = () => {
     return (
         <HeaderContainer>
 
-            <Title>Meu Projeto</Title>
+            <Title>Front-End React</Title>
 
             <Nav>
                 <NavList>

@@ -1,8 +1,10 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-
+import 'primeicons/primeicons.css';                         // Pacote de ícones
+import 'primeflex/primeflex.css';    
 import PageLayout from './layouts/PageLayout';
+// import Login from './pages/Login';
 
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Home = lazy(() => import('./pages/Home'));
@@ -11,6 +13,8 @@ const Contact = lazy(() => import('./pages/Contacts'));
 const About = lazy(() => import('./pages/About'));
 
 const App = () => (
+
+    
     <BrowserRouter>
 
         <Routes>
@@ -23,6 +27,12 @@ const App = () => (
                         <Home />
                     </Suspense>
                 } />
+
+                {/* <Route path="login" element={
+                    <Suspense fallback={<p>Carregando página...</p>}>
+                        <Login />
+                    </Suspense>
+                } /> */}
 
                 <Route path="feedbackform" element={
                     <Suspense fallback={<p>Carregando página...</p>}>
