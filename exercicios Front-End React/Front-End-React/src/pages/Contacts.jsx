@@ -1,158 +1,148 @@
 
-import { useState } from 'react';
-import styled from 'styled-components';
-
-const ContactContainer = styled.section`
-    min-height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #f1f5f9;
-`;
-
-const ContactForm = styled.div`
-    width: 100%;
-    max-width: 450px;
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-`;
-
-const ContactTitle = styled.h1`
-    color: #334155;
-    text-align: center;
-    margin-bottom: 10px;
-`;
-
-const ContactDescription = styled.p`
-    color: #64748b;
-    text-align: center;
-    margin-bottom: 25px;
-`;
-
-const Field = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 18px;
-
-    label {
-        color: #334155;
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
-
-    input, textarea {
-        padding: 12px;
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        font-size: 15px;
-        outline: none;
-
-        &:focus {
-            border-color: #2563eb;
-        }
-    }
-
-    textarea {
-        min-height: 100px;
-        resize: vertical;
-    }
-`;
-
-const ContactButton = styled.button`
-    width: 100%;
-    padding: 13px;
-    background-color: #4f6c91;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #354d6c;
-    }
-`;
+import { Card } from '@primereact/ui/card';
 
 const Contact = () => {
 
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [mensagem, setMensagem] = useState('');
-
-    const enviarMensagem = () => {
-
-        if (!nome || !email || !mensagem) {
-            alert('Preencha todos os campos!');
-            return;
-        }
-
-        const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailValido.test(email)) {
-            alert('Digite um email válido!');
-            return;
-        }
-
-        alert(`Mensagem enviada com sucesso!\n\nNome: ${nome}\nEmail: ${email}\nMensagem: ${mensagem}`);
-
-        setNome('');
-        setEmail('');
-        setMensagem('');
-    };
-
     return (
-        <ContactContainer>
 
-            <ContactForm>
+        <div className="surface-ground p-4">
 
-                <ContactTitle>
+            <div className="text-center mb-5">
+
+                <h1 className="text-4xl font-bold text-900 mb-2">
                     Entre em Contato
-                </ContactTitle>
+                </h1>
 
-                <ContactDescription>
-                    Envie sua mensagem. Será um prazer conversar!
-                </ContactDescription>
+                <p className="text-600 text-lg">
+                    Estamos à disposição para atender você!
+                </p>
 
-                <Field>
-                    <label>Nome</label>
-                    <input
-                        type="text"
-                        placeholder="Digite seu nome"
-                        value={nome}
-                        onChange={(e) => setNome(e.target.value)}
-                    />
-                </Field>
+            </div>
 
-                <Field>
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        placeholder="Digite seu email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </Field>
+            <div className="grid">
 
-                <Field>
-                    <label>Mensagem</label>
-                    <textarea
-                        placeholder="Digite sua mensagem"
-                        value={mensagem}
-                        onChange={(e) => setMensagem(e.target.value)}
-                    />
-                </Field>
+                {/* Telefones */}
+                <div className="col-12 md:col-4">
 
-                <ContactButton onClick={enviarMensagem}>
-                    Enviar Mensagem
-                </ContactButton>
+                    <Card.Root className="h-full">
 
-            </ContactForm>
+                        <Card.Body>
 
-        </ContactContainer>
+                            <Card.Content>
+
+                                <div className="text-center">
+
+                                    <i className="pi pi-phone text-4xl text-primary mb-3" />
+
+                                    <h2 className="text-xl font-bold">
+                                        Telefones
+                                    </h2>
+
+                                    <p className="text-600 mt-3">
+                                        (85) 3333-4444
+                                    </p>
+
+                                    <p className="text-600 mt-2">
+                                        (85) 99999-8888
+                                    </p>
+
+                                </div>
+
+                            </Card.Content>
+
+                        </Card.Body>
+
+                    </Card.Root>
+
+                </div>
+
+                {/* Emails */}
+                <div className="col-12 md:col-4">
+
+                    <Card.Root className="h-full">
+
+                        <Card.Body>
+
+                            <Card.Content>
+
+                                <div className="text-center">
+
+                                    <i className="pi pi-envelope text-4xl text-primary mb-3" />
+
+                                    <h2 className="text-xl font-bold">
+                                        E-mails
+                                    </h2>
+
+                                    <p className="text-600 mt-3">
+                                        contato@minhaloja.com
+                                    </p>
+
+                                    <p className="text-600 mt-2">
+                                        suporte@minhaloja.com
+                                    </p>
+
+                                </div>
+
+                            </Card.Content>
+
+                        </Card.Body>
+
+                    </Card.Root>
+
+                </div>
+
+                {/* Endereço */}
+                <div className="col-12 md:col-4">
+
+                    <Card.Root className="h-full">
+
+                        <Card.Body>
+
+                            <Card.Content>
+
+                                <div className="text-center">
+
+                                    <i className="pi pi-map-marker text-4xl text-primary mb-3" />
+
+                                    <h2 className="text-xl font-bold">
+                                        Endereço
+                                    </h2>
+
+                                    <p className="text-600 mt-3">
+                                        Avenida Central, 123
+                                    </p>
+
+                                    <p className="text-600 mt-2">
+                                        Fortaleza - CE
+                                    </p>
+
+                                    <p className="text-600 mt-2">
+                                        CEP: 60000-000
+                                    </p>
+
+                                </div>
+
+                            </Card.Content>
+
+                        </Card.Body>
+
+                    </Card.Root>
+
+                </div>
+
+            </div>
+
+            <div className="text-center mt-5">
+
+                <p className="text-600">
+                    Nosso atendimento funciona de segunda a sexta,
+                    das 08h às 18h.
+                </p>
+
+            </div>
+
+        </div>
+
     );
 };
 

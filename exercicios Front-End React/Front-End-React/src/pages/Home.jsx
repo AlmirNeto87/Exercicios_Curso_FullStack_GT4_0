@@ -1,75 +1,99 @@
 
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 
-const HomeContainer = styled.section`
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f1f5f9;
-`;
-
-const HomeTitle = styled.h1`
-    color: #334155;
-    font-size: 36px;
-    margin-bottom: 20px;
-
-    @media (max-width: 600px) {
-        font-size: 28px;
-    }
-`;
-
-const HomeDescription = styled.p`
-    color: #64748b;
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 600px;
-`;
-
-const HomeButton = styled.button`
-    margin-top: 25px;
-    padding: 12px 25px;
-    background-color: #4f6c91;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover {
-        background-color: #354d6c;
-    }
-`;
+import { Button } from '@primereact/ui/button';
+import { Card } from '@primereact/ui/card';
 
 const Home = () => {
 
     const navigate = useNavigate();
 
     return (
-        <HomeContainer>
 
-            <HomeTitle>
-                Bem-vindo à nossa aplicação!
-            </HomeTitle>
+        <div className="surface-ground p-4">
 
-            <HomeDescription>
-                Este é um espaço dedicado aos meus exercícios
-                de Front-End com React. Aqui estou colocando
-                em prática meus conhecimentos e evoluindo
-                no desenvolvimento web.
-            </HomeDescription>
+            <div className="flex flex-column align-items-center justify-content-center text-center"
+                 style={{ minHeight: '70vh' }}>
 
-            <HomeButton onClick={() => navigate('/feedbackform')}>
-                Começar a explorar
-            </HomeButton>
+                {/* Ícone principal */}
+                <i className="pi pi-desktop text-6xl text-primary mb-4" />
 
-        </HomeContainer>
+                {/* Título */}
+                <h1 className="text-4xl font-bold text-900 mb-3">
+                    Bem-vindo à nossa aplicação!
+                </h1>
+
+                {/* Descrição */}
+                <p className="text-600 text-lg line-height-3 mb-5"
+                   style={{ maxWidth: '650px' }}>
+
+                    Este é um espaço dedicado aos meus exercícios
+                    de Front-End com React.
+
+                    Aqui estou colocando em prática meus conhecimentos
+                    sobre componentes, navegação, gerenciamento de estados,
+                    consumo de APIs e desenvolvimento de interfaces.
+
+                </p>
+
+                {/* Card de apresentação */}
+                <div className="grid justify-content-center w-full">
+
+                    <div className="col-12 md:col-10 lg:col-8">
+
+                        <Card.Root>
+
+                            <Card.Body>
+
+                                <Card.Content>
+
+                                    <h2 className="text-2xl font-bold text-900 mb-3">
+                                        Explore nosso projeto!
+                                    </h2>
+
+                                    <p className="text-600 mb-4">
+                                        Conheça nossa loja virtual ou deixe
+                                        sua opinião através do formulário
+                                        de feedback.
+                                    </p>
+
+                                    {/* Botões */}
+                                    <div className="flex flex-column sm:flex-row justify-content-center gap-3">
+
+                                        <Button
+                                            onClick={() => navigate('/loja')}
+                                        >
+                                            <i className="pi pi-shopping-bag mr-2" />
+                                            Conhecer a Loja
+                                        </Button>
+
+                                        <Button
+                                            onClick={() => navigate('/feedbackform')}
+                                            severity="secondary"
+                                            outlined
+                                        >
+                                            <i className="pi pi-comment mr-2" />
+                                            Enviar Feedback
+                                        </Button>
+
+                                    </div>
+
+                                </Card.Content>
+
+                            </Card.Body>
+
+                        </Card.Root>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     );
+
 };
 
 export default Home;

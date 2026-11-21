@@ -76,6 +76,14 @@ const Header = () => {
                             Sobre
                         </StyledLink>
                     </li>
+
+                    <li>
+                        <StyledLink to="/loja">
+                            Loja Virtual
+                        </StyledLink>
+                    </li>
+
+
                 </NavList>
             </Nav>
 

@@ -11,6 +11,7 @@ const Home = lazy(() => import('./pages/Home'));
 const FeedbackForm = lazy(() => import('./pages/FeedbackForm'));
 const Contact = lazy(() => import('./pages/Contacts'));
 const About = lazy(() => import('./pages/About'));
+const Store = lazy(() => import('./store/pages/Store'))
 
 const App = () => (
 
@@ -28,11 +29,11 @@ const App = () => (
                     </Suspense>
                 } />
 
-                {/* <Route path="login" element={
+                <Route path="loja" element={
                     <Suspense fallback={<p>Carregando página...</p>}>
-                        <Login />
+                        <Store />
                     </Suspense>
-                } /> */}
+                } />
 
                 <Route path="feedbackform" element={
                     <Suspense fallback={<p>Carregando página...</p>}>
